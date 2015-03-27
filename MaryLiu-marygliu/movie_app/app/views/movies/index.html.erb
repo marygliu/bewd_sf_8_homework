@@ -1,12 +1,20 @@
 <center>
 
 <h1>Welcome to the RetFlix!</h1>
-<p>See our collection of movies below</p>
+<p>See our collection of movies below:</p>
 
 <br/>
 
+<!-- Use Rails helpers to start a form -->
+<%= form_tag movies_path, method: 'GET' do %>
+    <%= text_field_tag :q, params[:q] %> <!-- Adds params will add default text from ?q=... from the URL -->
+    <%= submit_tag 'Search' %> <!-- adds a 'search' button to submit query -->
+<% end %>
+
+
+<!-- Lists all the movies and links them to each movie's metadata -->
 <%@all_movies.each do |movie| %>
-    <%=link_to "#{movie.title}", movies_path(movie) %>
+    <p> <%= link_to "#{movie.title}", movies_path(movie) %> </p>
 <% end %>   
 
 
