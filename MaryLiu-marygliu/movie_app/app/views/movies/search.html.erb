@@ -1,0 +1,25 @@
+<!-- 
+@David/@Bryan: Please help! I'm not sure if I'm displaying any results in the search.html.erb 
+pages as the instructions specified.
+-->
+
+<%= render @user_movies %>
+
+<%@user_movies.each do |movie| %>
+
+	<table>
+	<col width="350">
+    <col width="100">
+	  <tr>
+	    <td> <%= movie.title %> </td>
+	    <td> <%= movie.year_released%> </td>
+	    <td> <%= movie.description%> </td>
+	  </tr>
+
+	</table>
+
+
+<% end %>   
+
+
+

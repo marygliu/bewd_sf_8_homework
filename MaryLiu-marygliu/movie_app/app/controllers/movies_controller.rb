@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
 	#Rails console is also your friend. Use it to explore active record methods that will help you interact with the database.
 
 	def index
+		@all_movies = Movie.all
 		@all_movies = Movie.search(params[:q])
 		#Note: this line is the same as --	
 #			@all_movies = Movie.first
@@ -29,7 +30,8 @@ class MoviesController < ApplicationController
 #		end
 	end
 
-	def show 
+	def search
+		@all_movies
 	end
 
 
