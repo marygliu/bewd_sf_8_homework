@@ -20,23 +20,27 @@
     <table>
       <col width="350">
       <col width="100">
+      <col width="350">
 	  
 	  <tr>
 	    <th>Title </th>
 	    <th>Year Released </th>
 	    <th>Description </th>
+	    <th>Rating </th>
 	  </tr>
 	</table>
 
-<%@all_movies.each do |movie| %>
+<%@movies.each do |movie| %>
 
 	<table>
 	<col width="350">
     <col width="100">
+    <col width="350">
 	  <tr>
 	    <td> <%= movie.title %> </td>
 	    <td> <%= movie.year_released%> </td>
 	    <td> <%= movie.description%> </td>
+	    <td> <%= movie.rating %> </td>
 	  </tr>
 
 	</table>

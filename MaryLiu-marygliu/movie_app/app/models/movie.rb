@@ -1,6 +1,7 @@
 class Movie < ActiveRecord::Base
     validates :title, :description, presence: true
-    validates :year_released, numericality: { greater_than: 1800 }
+    validates :description, length: {minimum: 10}
+    validates :year_released, numericality: { only_integer: true, greater_than: 0 }
 
 	def self.search(query)
 		if query 
