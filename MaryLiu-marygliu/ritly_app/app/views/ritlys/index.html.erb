@@ -1,0 +1,10 @@
+<h1>Ritlys URL Shortener</h1>
+
+
+<%= form_for @ritly, url: ritlys_path do |f| %>
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+
+    
+    <%= submit_tag('Generate') %> <!-- adds a 'search' button to submit query -->
+<% end %>
