@@ -1,0 +1,42 @@
+##### APP DESCRIPTION ######
+
+- App allows user to discover high-end, crowded speakeasies 
+  / mixology bars by choice of drinks. 
+- [Stretch goal] App also let's user make reservations for a price
+  using a checkout flow (Stripe integration).
+
+
+##### USER STORIES ######
+
+# As a guest, I can see types of mixology drinks 
+
+# As a guest, I can search by the type of drinks and see which bar 
+  has the drink (bar name, drink name, drink reviews) 
+
+# As a user, I can submit a review of the drink
+
+# [Stretch goal] As a user, I can make a reservation for a price 
+	#spec: Using Stripe APIs: https://stripe.com/docs/checkout/guides/rails
+
+
+
+##### SCHEMA ######
+
+Bars: 
+- has_many drinks
+
+Drink type
+- has_many drinks
+
+Drink: 
+- belong_to type, bar
+- has_many reviews
+- has_one bar *
+- price
+- name
+
+*Assume every bar has a unique name for the drink, even if ingredients are the same
+
+Reviews: belong_to drink
+
+
