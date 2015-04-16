@@ -1,0 +1,30 @@
+<% if @painting.errors.any? %>
+  <h2>The following errors prevented your painting from saving:</h2>
+  <ul>
+  <% @painting.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @painting do |f| %>
+  <fieldset>
+    <legend>Painting</legend>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :image %>
+      <%= f.text_field :image %>
+    </div> <!-- collection selector -->
+      <%= f.collection_select(:museum_id, @museums, :id, :name) %>
+    <div>
+    </div>
+      <%= f.collection_select(:artist_id, @artists, :id, :name) %>
+    <div>
+    </div>
+    </fieldset>
+  <%= f.submit %>
+<% end %>

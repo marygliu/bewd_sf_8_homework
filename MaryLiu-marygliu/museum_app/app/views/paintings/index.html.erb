@@ -1,0 +1,16 @@
+<!-- open question: image tag doesn't work -->
+
+<h1>Welcome to the Digital Museum </h1>
+
+
+
+<%= form_tag paintings_path, method: 'GET' do %>
+	<%= text_field_tag :q, params[:q] %>
+	<%= submit_tag('Search') %>
+<% end %>
+
+<% @all_paintings.each do |painting| %>
+	<%= painting.title %>
+	<%= image_tag(painting.image, width: "100", alt:"image")%>
+	<%= painting.museum.name %> 
+<% end %>
