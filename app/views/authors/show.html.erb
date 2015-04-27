@@ -1,0 +1,16 @@
+<h1><%= @author.name %>'s trending articles</h1>
+
+<% total_shares = 0 %>
+<% @author.articles.each { |article| total_shares += article.shares } %>
+<h2><b>Total Recent Shares</b>: <%= total_shares %> </h2>
+
+<hr/>
+
+<% @author.articles.each do |article| %>
+	<section>
+		<h3><b>Title</b>: <%= link_to article.title, article %></h3>
+		<p><b>Shares</b>: <%= article.shares %></p>
+		<%= link_to image_tag(article.image), article.short_url %>
+      	<hr>
+    </section>
+<% end %>

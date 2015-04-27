@@ -1,0 +1,14 @@
+<h1> Top Tech Articles </h1>
+
+<br/><hr/>
+
+	<% @articles.each do |article| %>
+		<section>
+			<h3><b>Title</b>: <%= link_to article.title, article %></h3>
+ 
+			<p><b>Shares</b>: <%= article.shares %></p>
+			<%= link_to image_tag(article.image), article.short_url %>
+
+      <hr>
+    </section>
+  <% end %>

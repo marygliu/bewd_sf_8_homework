@@ -1,0 +1,22 @@
+<h1>Trending Authors</h1>
+
+<%= form_tag "/", method: "GET" do %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<br/><hr/>
+
+<% if @authors.any? %>
+
+	<% @authors.each do |author| %>
+		<section>
+			<%= link_to author.name, author %></h3>
+		</section>
+	<% end %>
+
+<% else %>
+
+	<h4>Sorry, no authors matched your search.</h4>
+
+<% end %>
