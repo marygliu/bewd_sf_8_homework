@@ -2,7 +2,6 @@
 <%=image_tag @article.image %>
 <h3>Shares: <%=@article.shares %></h3>
 <h3><%= @article.author.name%></h3>
-<h3><%= @article.publisher.name %></h3>
 <p>
 	<%= @article.excerpt %> 
 	<%= link_to '...continue reading', @article.short_url %>
