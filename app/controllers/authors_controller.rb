@@ -11,7 +11,7 @@ class AuthorsController < ApplicationController
   def show
 
   	@author = Author.find(params[:id])
-  	@author_articles = Article.where(author: @author.id)
+  	@author_articles = Article.where(author: params[:id])#@author.id)
 
   end
 end
