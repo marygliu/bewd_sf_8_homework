@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
 
 	def self.fetch_mashable
 		Article.delete_all
-		Author.delete_all
+		#Author.delete_all
 
 		mashable = JSON.load(RestClient.get('http://mashable.com/tech.json'))
 		
@@ -12,16 +12,10 @@ class Article < ActiveRecord::Base
 
 		#Pull author names
 		mashable['rising'].each do |article|
-			if #cant find matching author
+			#unless Author.find_by_name(article['author'] )
 				Author.create!(:name => article['author'])
-			end
-		end
-	
-
-
-			#if article['author'] != Author.where(name: article['author'])
-			#	Author.create! :name => article['author']
 			#end
+		end
 	
 		Author.all
 
@@ -37,6 +31,7 @@ class Article < ActiveRecord::Base
 				:author => Author.find_by(name: article['author']))
 		end
 		Article.all
+
 	end
 	
 	

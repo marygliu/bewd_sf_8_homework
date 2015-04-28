@@ -10,11 +10,12 @@
 <br/><hr/>
 
 <% if @authors.any? %>
-
+	
 	<% @authors.each do |author| %>
-		<section>
-			<%= link_to author.name, author %></h3>
-		</section>
+			<section>
+				<%= link_to author.name, author %></h3>
+			</section>
+	
 	<% end %>
 
 <% else %>
