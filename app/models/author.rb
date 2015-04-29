@@ -8,12 +8,12 @@ class Author < ActiveRecord::Base
 		if query
 			Author.where('name LIKE :query', {query: "%#{query}%"})
 		else
-			mashable = JSON.load(RestClient.get('http://mashable.com/tech.json'))
-			mashable['rising'].each do |article|
-				unless Author.find_by_name(article['author'] )
-					Author.create!( :name => article['author'])
-				end
-			end
+			# mashable = JSON.load(RestClient.get('http://mashable.com/tech.json'))
+			# mashable['rising'].each do |article|
+			# 	unless Author.find_by_name(article['author'] )
+			# 		Author.create!( :name => article['author'])
+			# 	end
+			# end
 			Author.all
 		
 		end
