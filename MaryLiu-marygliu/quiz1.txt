@@ -1,0 +1,8 @@
+1. cd
+2. git is the repository of files. Github is the cloud portal where you can push and pull files.
+3. it's the place where you find versions of your files.
+4. git push
+5. (3) git push
+6. One version of the file before it's merged with the master file
+7. To merge files or to add files to the git hub cloud
+8. Diff between cloning and forking: Cloning isn't saved. It's just a copy on your local storage. Fork is pushed to the github 

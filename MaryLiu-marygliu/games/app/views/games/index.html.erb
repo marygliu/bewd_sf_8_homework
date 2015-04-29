@@ -1,0 +1,21 @@
+<h1>Welcome to Mary Liu's Games!</h1>
+<h2>Choose a game to play: </h2>
+
+<!-- 
+<div><%= link_to 'Play Secret Number!', new_secret_number_path %></div> !> 
+<div><%= link_to 'Play Rock Paper Scissors!', new_rock_paper_scissor_path %></div> 
+<div><%= link_to image_tag("image1.png"), new_rock_paper_scissor_path %></div> 
+-->
+
+<br/>
+
+<table>
+  <tr>
+    <td>
+      <%=link_to image_tag("secret_number.png"), new_secret_number_path %>
+    </td>
+    <td>
+      <%=link_to image_tag("rps.png"), new_rock_paper_scissor_path %>
+    </td>
+  </tr>
+</table>

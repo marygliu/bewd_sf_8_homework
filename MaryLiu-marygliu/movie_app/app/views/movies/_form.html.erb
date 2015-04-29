@@ -1,0 +1,36 @@
+<%= form_for(@movie) do |f| %>  
+<!-- instead of form_tag. form_for passes new objects to DB, and passes existing objects to update -->
+  <% if @movie.errors.any? %>  <!-- if movie has any errors, output the below message -->
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% @movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :year_released %><br>
+    <%= f.text_area :year_released %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br>
+    <%= f.text_area :rating %>
+  </div>
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

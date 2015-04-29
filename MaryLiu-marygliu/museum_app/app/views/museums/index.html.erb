@@ -1,0 +1,10 @@
+<h1>Search by Museums</h1>
+
+<%= form_tag museums_path, method: 'GET' do %>
+	<%= text_field_tag :q, params[:q] %>
+	<%= submit_tag('Search Museums') %>
+<% end %>
+
+<% @museums.each do |museum|  %>
+	<%= museum.name %>
+<% end %>

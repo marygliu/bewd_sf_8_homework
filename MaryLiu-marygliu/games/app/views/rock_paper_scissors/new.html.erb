@@ -1,0 +1,34 @@
+<center>
+<h1>Welcome to Rock Paper Scissors!</h1>
+<p>To play this game, all you have to do is throw a rock, paper, or scissor. If you beat the
+  <em>one I throw</em>, you win!</p>
+<p>Choose carefully... you only get one try!</p>
+<h2>What's your throw?</h2>
+
+<!-- 
+<ul>
+  <% @rps.each do |throw_choice| %>
+    <li><%= link_to throw_choice, rock_paper_scissor_path(throw_choice) %></li>
+    
+  <% end %>
+</ul>
+-->
+
+
+<br/>
+
+<table>
+  <tr>
+    <td>
+      <%=link_to image_tag("throw_rock.png"), rock_paper_scissor_path(@rps[0]) %>
+    </td>
+    <td>
+      <%=link_to image_tag("throw_paper.png"), rock_paper_scissor_path(@rps[1]) %>
+    </td>
+    <td>
+      <%=link_to image_tag("throw_scissors.png"), rock_paper_scissor_path(@rps[2]) %>
+    </td>
+  </tr>
+</table>
+</center>
+
